@@ -7,7 +7,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useEnvios } from "../hooks/useEnvios.js";
 import { useTelemetry } from "../hooks/useTelemetry.js";
-import truckIconUrl from "../../assets/truck.png";
 
 // ── CSS embebido - Professional SaaS Design ──────────────────────────────────
 const MAP_STYLES = `

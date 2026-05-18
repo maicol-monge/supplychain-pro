@@ -1,9 +1,10 @@
-import React from "react";
 import { useTelemetry } from "../hooks/useTelemetry.js";
 import { useIncidents } from "../hooks/useIncidents.js";
 import "../styles/telemetry.css";
 
 const TelemetryPanel = ({ selectedEnvio, rupturas = [] }) => {
+  const { telemetry } = useTelemetry(selectedEnvio?.id_envio);
+  const { incidents } = useIncidents(selectedEnvio?.id_envio);
   if (!selectedEnvio) {
     return (
       <div className="telemetry-panel-placeholder">
@@ -12,8 +13,7 @@ const TelemetryPanel = ({ selectedEnvio, rupturas = [] }) => {
     );
   }
 
-  const { telemetry } = useTelemetry(selectedEnvio?.id_envio);
-  const { incidents } = useIncidents(selectedEnvio?.id_envio);
+  
 
   const {
     id_envio,

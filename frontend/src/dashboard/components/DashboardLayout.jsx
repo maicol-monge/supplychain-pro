@@ -37,8 +37,8 @@ export default function DashboardLayout({ user, onLogout }) {
       try {
         const res = await apiService.getTelemetriaByEnvio(selectedEnvio.id_envio);
         if (res.success && res.data) {
-          const tempMax = Number(selectedEnvio.temp_max_permitida) ?? 15;
-          const tempMin = Number(selectedEnvio.temp_min_permitida) ?? -5;
+          const tempMax = Number(selectedEnvio.temp_max_permitida ?? 15);
+const tempMin = Number(selectedEnvio.temp_min_permitida ?? -5);
           const breaches = res.data.filter((t) => {
             const temp = Number(t.temperatura);
             return !Number.isNaN(temp) && (temp > tempMax || temp < tempMin);

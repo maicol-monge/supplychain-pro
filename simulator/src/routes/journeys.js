@@ -4,7 +4,7 @@
 
 const express = require('express');
 const router = express.Router();
-const { activeJourneys, iniciarViaje, finalizarViaje, cancelarViaje, iniciarTelemetria, persistJourneys } = require('../controllers/journeyController');
+const { activeJourneys, iniciarViaje, cancelarViaje, iniciarTelemetria, persistJourneys } = require('../controllers/journeyController');
 
 /**
  * GET /api/simulator/health

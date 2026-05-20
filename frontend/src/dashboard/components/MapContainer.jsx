@@ -4,8 +4,7 @@
  * CSS embebido directamente en el componente
  */
 
-import { useEffect, useRef, useState, useCallback, useMemo } from "react";
-import { useEnvios } from "../hooks/useEnvios.js";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { useTelemetry } from "../hooks/useTelemetry.js";
 import apiService from "../services/apiService.js";
 
@@ -885,7 +884,6 @@ export default function MapContainer({ selectedEnvio, onSelectEnvio, rupturas = 
 
         // Hit-test equivalente al handleCanvasClick original
         circle.on("click", () => {
-          setSelectedForMap(envio);
           onSelectEnvio(envio);
         });
 
